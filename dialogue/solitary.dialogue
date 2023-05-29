@@ -1,0 +1,11 @@
+~ solitary
+
+: [do change_speaker(0)]Pude recoger algunas azucenas del parque, estaban preciosas.
+: Creo que las secaré y decoraré un pasador para regalarlo a Sofia.
+: Debería volver en unos días a comprar una nevera nueva.
+: Me preocuparé en otro momento.
+: El temblor del tren me relaja.
+: Poco a poco duermo en el asiento, con los últimos rayos de sol tocando mi cara.
+do return_menu()
+
+=> END

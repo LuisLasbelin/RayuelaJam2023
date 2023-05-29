@@ -1,0 +1,309 @@
+[gd_scene load_steps=21 format=3 uid="uid://u5eokup6q71"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_w5uyj"]
+[ext_resource type="Texture2D" uid="uid://bmia5bsmfdh4i" path="res://assets/sprites/tren_cielo.png" id="2_10euu"]
+[ext_resource type="Texture2D" uid="uid://di8xqepbvn00u" path="res://assets/sprites/tren_edificios_paralaje.png" id="3_kwhjx"]
+[ext_resource type="Texture2D" uid="uid://dyl6b1kw6ugys" path="res://assets/sprites/tren_marco.png" id="4_p5v2k"]
+[ext_resource type="Texture2D" uid="uid://b8ft8gdltghf7" path="res://assets/sprites/tren_persona1.png" id="5_8pk6l"]
+[ext_resource type="Texture2D" uid="uid://dbevocjdvd6tl" path="res://assets/sprites/burbuja3.png" id="5_qoxvx"]
+[ext_resource type="Texture2D" uid="uid://bkjlj7offob6a" path="res://assets/sprites/burbuja2.png" id="6_fr64m"]
+[ext_resource type="Texture2D" uid="uid://u1jdt2kayhym" path="res://assets/sprites/tren_persona2.png" id="6_hqwmn"]
+[ext_resource type="Texture2D" uid="uid://df0mikk61w75r" path="res://assets/sprites/burbuja4.png" id="7_1vm7i"]
+[ext_resource type="Texture2D" uid="uid://m8xv00wysct4" path="res://assets/sprites/burbuja1.png" id="8_64kk6"]
+[ext_resource type="AudioStream" uid="uid://c1y20e2m4to7b" path="res://assets/sound/193739__zabuhailo__night_passenger_wagon_6.mp3" id="8_nr5w5"]
+
+[sub_resource type="Animation" id="Animation_guryv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TrenMarco:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(723, 305)]
+}
+
+[sub_resource type="Animation" id="Animation_g8d42"]
+resource_name = "Temblor_tren"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TrenMarco:position")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.7, 0.9, 1, 1.3, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(723, 320), Vector2(723, 315), Vector2(723, 321), Vector2(723, 320), Vector2(723, 321), Vector2(723, 315), Vector2(723, 321), Vector2(723, 315)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1pst0"]
+_data = {
+"RESET": SubResource("Animation_guryv"),
+"Temblor_tren": SubResource("Animation_g8d42")
+}
+
+[sub_resource type="Animation" id="Animation_7a5ox"]
+resource_name = "show_persona1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TrenPersona1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8sqf6"]
+resource_name = "show_persona2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TrenPersona2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a884b"]
+_data = {
+"show_persona1": SubResource("Animation_7a5ox"),
+"show_persona2": SubResource("Animation_8sqf6")
+}
+
+[sub_resource type="Animation" id="Animation_3umvo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TrenEdificiosParalaje2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-461, 386)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TrenEdificiosParalaje:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(160, 322)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TrenEdificiosParalaje3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-668, 339)]
+}
+
+[sub_resource type="Animation" id="Animation_5v80t"]
+resource_name = "parallax_loop"
+length = 20.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TrenEdificiosParalaje:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-672, 322), Vector2(1805, 322)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TrenEdificiosParalaje2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(295, 339), Vector2(1925, 339)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TrenEdificiosParalaje3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-668, 339), Vector2(296, 339)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1hle4"]
+_data = {
+"RESET": SubResource("Animation_3umvo"),
+"parallax_loop": SubResource("Animation_5v80t")
+}
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_w5uyj")
+
+[node name="TrenCielo" type="Sprite2D" parent="."]
+position = Vector2(639, 322)
+scale = Vector2(4, 4)
+texture = ExtResource("2_10euu")
+
+[node name="TrenEdificiosParalaje2" type="Sprite2D" parent="."]
+position = Vector2(-461, 386)
+scale = Vector2(4, 4)
+texture = ExtResource("3_kwhjx")
+
+[node name="TrenEdificiosParalaje3" type="Sprite2D" parent="."]
+position = Vector2(-668, 339)
+scale = Vector2(4, 4)
+texture = ExtResource("3_kwhjx")
+
+[node name="TrenEdificiosParalaje" type="Sprite2D" parent="."]
+position = Vector2(160, 322)
+scale = Vector2(4, 4)
+texture = ExtResource("3_kwhjx")
+
+[node name="TrenMarco" type="Sprite2D" parent="."]
+position = Vector2(723, 305)
+scale = Vector2(4.57781, 4.57781)
+texture = ExtResource("4_p5v2k")
+
+[node name="TrenPersona1" type="Sprite2D" parent="TrenMarco"]
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("5_8pk6l")
+
+[node name="TrenPersona2" type="Sprite2D" parent="TrenMarco"]
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("6_hqwmn")
+
+[node name="Burbuja1" type="Sprite2D" parent="TrenMarco"]
+visible = false
+texture = ExtResource("8_64kk6")
+
+[node name="Burbuja2" type="Sprite2D" parent="TrenMarco"]
+visible = false
+texture = ExtResource("6_fr64m")
+
+[node name="Burbuja3" type="Sprite2D" parent="TrenMarco"]
+visible = false
+texture = ExtResource("5_qoxvx")
+
+[node name="Burbuja4" type="Sprite2D" parent="TrenMarco"]
+visible = false
+texture = ExtResource("7_1vm7i")
+
+[node name="TrenAnimator" type="AnimationPlayer" parent="TrenMarco"]
+root_node = NodePath("../..")
+autoplay = "Temblor_tren"
+libraries = {
+"": SubResource("AnimationLibrary_1pst0")
+}
+
+[node name="PersonasAnimator" type="AnimationPlayer" parent="TrenMarco"]
+libraries = {
+"": SubResource("AnimationLibrary_a884b")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_nr5w5")
+autoplay = true
+bus = &"BG"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/CenterContainer"]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+color = Color(0.14902, 0.113725, 0.266667, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Nombre"
+
+[node name="NameEdit" type="TextEdit" parent="CanvasLayer/CenterContainer/VBoxContainer" groups=["NameEdit"]]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Laura"
+placeholder_text = "Laura"
+caret_blink = true
+
+[node name="HSeparator2" type="HSeparator" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Pronombre"
+
+[node name="PronsSelector" type="OptionButton" parent="CanvasLayer/CenterContainer/VBoxContainer" groups=["PronsSelector"]]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+item_count = 3
+selected = 1
+popup/item_0/text = "Masculino"
+popup/item_0/id = 0
+popup/item_1/text = "Femenino"
+popup/item_1/id = 1
+popup/item_2/text = "Neutro"
+popup/item_2/id = 2
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="StartBtn" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "EMPEZAR"
+
+[node name="Parallax" type="AnimationPlayer" parent="."]
+autoplay = "parallax_loop"
+libraries = {
+"": SubResource("AnimationLibrary_1hle4")
+}
+
+[connection signal="text_changed" from="CanvasLayer/CenterContainer/VBoxContainer/NameEdit" to="." method="_on_text_edit_text_changed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/StartBtn" to="." method="_on_start_btn_pressed"]

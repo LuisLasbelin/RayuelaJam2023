@@ -1,0 +1,97 @@
+import "res://dialogue/company.dialogue" as dialogue_company
+import "res://dialogue/solitary.dialogue" as dialogue_solitary
+
+~ init
+
+: [do change_speaker(0)]El temblor de las ruedas del tren en las vias me reconforta tras un largo día.
+: Lo que más me ha agotado ha sido
+- Visitar tiendas para conseguir todo lo que me pidieron.
+	: Me acompañaron Sofia y Pablo, han sido de gran ayuda.
+	do show_person2()
+	[wait=1]
+	Sofia: [do change_speaker(1)]Y cuando me giré se había ido.
+	Pablo: [do change_speaker(2)]Mm... no tengo ni puta idea.
+	Sofia: [do change_speaker(1)]Vaya, suponía que igual como sabes de animales.
+	Pablo: [do change_speaker(2)][shake rate=20 level=10]¡Qué va![/shake] Sé de perros, no soy biólogo.
+	{{Globals.playerName}}: [do change_speaker(4)]Supongo que no sería un perro.
+	Sofia: [do change_speaker(1)]Era una especie de ardilla gigante.
+	Pablo: [do change_speaker(2)]Sería un mapache.
+	{{Globals.playerName}}: [do change_speaker(4)]Aquí no hay mapaches.
+	Pablo: [do change_speaker(2)]¿A lo mejor se habría escapado de la finca de algún ricachón?
+	Sofia: [do change_speaker(1)]¡Puede ser!
+	: [do change_speaker(0)]Nos reimos fuerte los tres a la vez.
+	{{Globals.playerName}}: [do change_speaker(4)]Sí que ha sido un día largo, Pablo empieza a imaginar cosas.
+	Pablo: [do change_speaker(2)]Ya te digo, al menos hemos conseguido las herramientas de carpintero.
+	=> carpintero
+
+- Pasear por el parque del rio.
+	: El paseo ha sido largo y [wave amp=25 freq=5]mis pies lo saben.[/wave]
+	: Ya es primavera, las flores están preciosas.
+	- Paseé con buena compañía. => dialogue_company/company
+	- Pude pasear en soledad y ordenar mis pensamientos. => dialogue_solitary/solitary
+
+
+~ carpintero
+
+Pablo: [do change_speaker(3)]¿Por qué quiere tu madre esas herramientas?
+{{Globals.playerName}}: [do change_speaker(4)]No lo sé, no me lo ha dicho. Solo me dijo que era un secreto.
+{{Globals.playerName}}: Según ella para que no se enterara mi hermano.
+Sofia: [do change_speaker(2)]Esos secretitos... puede que sea para su cumpleaños.
+Pablo: [do change_speaker(3)]Es muy posible. Le encanta tener secretos, pero se le da fatal conservarlos. [wave amp=15 freq=5]Jajaja[/wave]
+=> tareas
+
+~ tareas
+
+- También compramos una nevera nueva. => nevera
+- Conseguimos recambios para el teléfono a buen precio. => recambios
+- Cambiaré de tema, gracias por haberme ayudado con algo tan pesado. => final_compras
+
+~ nevera
+
+Pablo: [do change_speaker(3)]Al menos no tenemos que cargar con la nevera hasta el pueblo.
+Sofia: [do change_speaker(2)]¡Habría supuesto mi [shake rate=20 level=10]muerte[/shake]!
+{{Global.playerName}}: [do change_speaker(4)]Habría avisado a mi primo, no os hubiera hecho pasar ese suplicio. Jajaja.
+Pablo: [do change_speaker(3)]¿Ves? Se nota que valora nuestra amistad.
+Sofia: [do change_speaker(2)]Yo no lo dudaba.
+{{Global.playerName}}: [do change_speaker(4)]¿A qué viene eso?
+Pablo: [do change_speaker(3)]Es una tontería. Ya sabes cómo son en el pueblo.
+{{Global.playerName}}: [do change_speaker(4)]¿Quejas?
+Sofia: [do change_speaker(2)]¡Que va! Son algunos del grupo que les gusta meter mierda.
+Pablo: [do change_speaker(3)]Jajaja, Sofia no se enfadaba así desde hacíaa mucho.
+{{Global.playerName}}: [do change_speaker(4)]Supongo que sería porque no voy mucho por allí.
+Pablo: [do change_speaker(3)]Sí, a algunos les gusta inventarse chorradas. Ya sabes cómo son.
+{{Global.playerName}}: [do change_speaker(4)]Sí, les pongo cara.
+=> tareas
+
+~ recambios
+
+Sofia: [do change_speaker(2)]Tenemos estos recambios también.
+Pablo: [do change_speaker(3)]¿Para qué eran?
+Sofia: [do change_speaker(2)]Para arreglar el teléfono del abuelo de {{Global.playerName}}.
+{{Global.playerName}}: [do change_speaker(4)]Hace años que no lo cambia, sigue usando ese Xiam antiguo.
+Sofia: [do change_speaker(2)]Modelo de 2014 además.
+Pablo: [do change_speaker(3)][shake rate=10 level=5]¡¿2014?![/shake] ¡Eso es una reliquia!
+Sofia: [do change_speaker(2)]En realidad sí, me extraña que no lo done al museo del pueblo.
+{{Global.playerName}}: [do change_speaker(4)]Según él tiene demasiados recuerdos ahí dentro.
+Sofia: [do change_speaker(2)]Pero puede transferir lo que sea a una memoria nueva, hay adaptadores.
+{{Global.playerName}}: [do change_speaker(4)]Que son más complicados de encontrar que las piezas de reparación.
+Sofia: [do change_speaker(2)]Supongo que sí. Hace tiempo que Juan no tiene en la tienda ninguno.
+Pablo: [do change_speaker(3)]Creo que mi padre tenía uno de esos, aunque no sé si funcionará.
+Pablo: [do change_speaker(3)]Cuando lleguemos recuérdamelo y vamos a mi casa a buscarlo.
+{{Global.playerName}}: [do change_speaker(4)]Seguramente estará perdido por su taller.
+Pablo: [do change_speaker(3)]¡Exacto! Por eso necesitaré ayuda. [wave amp=15 freq=5]Jajaja[/wave]
+
+=> tareas
+
+~ final_compras
+
+{{Globals.playerName}}: [do change_speaker(4)]Gracias por haberme ayudado con algo tan pesado.
+Pablo: [do change_speaker(3)]Solo han sido unas pocas horas.
+Sofia: [do change_speaker(2)]Y nos hemos podido poner al día.
+{{Globals.playerName}}: [do change_speaker(4)]Hacía semana que no os veía, eso es verdad.
+Pablo: [do change_speaker(3)]¡Y tanto! Pensaba que te habías olvidado de nosotros.
+{{Globals.playerName}}: [do change_speaker(4)]Para nada, aquí no es tan fácil hacer esta clase de amistades.
+Sofia: [do change_speaker(2)]No tenemos competencia, jajaja.
+: [do change_speaker(0)]Al final, ha sido un día divertido.
+do return_menu()
+=> END!

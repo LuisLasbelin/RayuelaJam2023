@@ -1,0 +1,14 @@
+[remap]
+
+importer="dialogue_manager_compiler_8"
+type="Resource"
+uid="uid://b8vvufugdvnfx"
+path="res://.godot/imported/solitary.dialogue-28775c5bd2c38c8c2146794f18ad9f9c.tres"
+
+[deps]
+
+source_file="res://dialogue/solitary.dialogue"
+dest_files=["res://.godot/imported/solitary.dialogue-28775c5bd2c38c8c2146794f18ad9f9c.tres"]
+
+[params]
+

@@ -1,0 +1,57 @@
+~ company
+
+do show_person1()
+: [do change_speaker(0)] Se ha sentado en el lado opuesto del vagón, pero está casi vacío, podemos hablar tranquilamente.
+{{Globals.playerName}}: ¿Qué te ha parecido el parque, Sofia?
+Sofia: [do change_speaker(3)] Es precioso, salir en primavera se agradece. No hace tanto calor aun.
+{{Globals.playerName}}: [do change_speaker(4)] Y además hay animales.
+Sofia: [do change_speaker(3)] ¡Sí! Julita es muy graciosa.
+{{Globals.playerName}}: [do change_speaker(4)]¿La ardilla? ¡Qué nombre!
+Sofia: [do change_speaker(3)]Se merece el nombre, nos ha alegrado la tarde entera.
+: [do change_speaker(0)]Es cierto, no solo paseamos.
+=> sofia_conversaciones
+
+
+~ sofia_conversaciones
+
+- También hablamos de sus problemas familiares. => sofia_problemas_familiares
+- Me estuvo ayudando a superar mi ruptura reciente. => sofia_ruptura
+- Debería cambiar de tema. => sofia_final
+
+~ sofia_problemas_familiares
+
+{{Globals.playerName}}: [do change_speaker(4)]Y que lo digas...
+Sofia: [do change_speaker(3)]Oye, no hace falta que te estreses por eso.
+Sofia: [do change_speaker(3)]Voy a estar [wave amp=5 freq=5]bien[/wave].
+: [do change_speaker(0)]Ese "bien" no suena convincente.
+{{Globals.playerName}}: [do change_speaker(4)]Lo sé... sé que tampoco puedo hacer gran cosa.
+Sofia: [do change_speaker(3)]Haces más que suficiente. Es mi problema, no tienes ninguna obligación conmigo.
+{{Globals.playerName}}: [do change_speaker(4)]Supongo...
+: [do change_speaker(0)]El silencio es pesado, pero no es tan incómodo como antes.
+: [do change_speaker(0)]Supongo que el corazón solo lleva sangre.
+
+=> sofia_conversaciones
+
+~ sofia_ruptura
+
+{{Globals.playerName}}: [do change_speaker(4)]Me has ayudado mucho hoy.
+Sofia: [do change_speaker(3)]Ay, no hace falta. Te aprecio demasiado como para dejarte pasar algo así en soledad.
+{{Globals.playerName}}: [do change_speaker(4)]Y lo aprecio muchísimo.
+Sofia: [do change_speaker(3)]Has hecho lo mismo por mí otras veces. Es justo que te devuelva el favor.
+{{Globals.playerName}}: [do change_speaker(4)]Pero no es solo eso, haces más por mí de lo que hago por tí.
+Sofia: [do change_speaker(3)]De eso tratan las amistades ¿no?
+Sofia: [do change_speaker(3)]No estamos en el mercado comprando favores.
+: [do change_speaker(0)]Solo puedo decir un "gracias" tímido y pensar.
+
+=> sofia_conversaciones
+
+~ sofia_final
+
+: [do change_speaker(0)]Al final hablamos de otras cosas. Mi familia sigue como siempre, ajetreada con los molinos.
+: [do change_speaker(0)]La suya tiene un taller de telecomunicaciones así que conocen a todo el pueblo.
+: [do change_speaker(0)]Una de sus madres fue elegida alcaldesa el año pasado, es popular, aunque a Sofia le molesta que priorice la política.
+: [do change_speaker(0)]A su mujer no parece molestarle. Es la persona más paciente que he conocido en mi vida.
+: [do change_speaker(0)]En fin... ha sido un buen día al final.
+do return_menu()
+
+=> END
